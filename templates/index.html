@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>SoundLIB</title>
+</head>
+<body>
+    <h1> SoundLIB Music List</h1>
+    <table border="1px">
+        <tr>
+            <th>Name</th>
+            <th>Album</th>
+            <th>Artist</th>
+        </tr>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row["track_name"] }}</td>
+                <td>{{ row["album_title"] }}</td>
+                <td>{{ row["artist_name"] }}</td>
+            </tr>
+            {% endfor %}
+            {% if not rows %}
+            <tr>
+                <td colspan="3">No data available</td>
+            </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>
